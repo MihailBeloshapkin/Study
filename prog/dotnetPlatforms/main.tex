@@ -1,0 +1,174 @@
+\documentclass[14pt,pdf,hyperref={unicode}]{beamer}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtext}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,bulgarian,ukranian,russian]{babel}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+
+
+\setbeamercovered{dynamic}
+\title{Сравнение платформ .NET Core, .NET Framework, Mono}
+\author{Белошапкин Михаил, 144 группа}
+
+\usepackage{natbib}
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Платформа .net Framework}
+    \begin{itemize}
+        \item Самая старая
+        \item Наиболее популярна
+        \item Поставляется в комплекте с Windows
+        \item Не являеся платформой с открытым ИК
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Платформа .net Framework}
+    \begin{itemize}{}
+    \item Компилятор языка C\#
+    \item Среда исполнения
+    \begin{itemize}{}
+        \item Common Language Runtime
+        \item Компилятор CLI (Just-In-Time)
+        \item Загрузчик сборок
+        \item Сборщик мусора
+        \item Подсистемы управления многопоточностью
+    \end{itemize}
+     \item Библиотека классов
+        \begin{itemize}
+            \item Консольные приложения, Windows Froms, ASP.NET
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Преимущества .net Framework}
+\begin{itemize}
+    \item Не все сторонние библиотеки и пакеты NuGet доступны .NET Core
+    \item .NET технологии, не доступные .NET Core
+    \begin{itemize}
+        \item Некоторые компоненты ASP.NET, службы рабочих процессов, поддержка языков
+    \end{itemize}
+\end{itemize}
+    
+\end{frame}
+
+
+\begin{frame}{Платформа .NET Core}
+\begin{itemize}
+    \item На основе .NET Framework
+    \item Платформа разработки общего назначения
+    \item Модульность
+    \item С открытым исходным кодом
+    \item Активно развивается
+    \item Кроссплатформенность
+    \begin{itemize}
+        \item Windows, Linux, macOS
+        \item x64, x86, ARM32, ARM64
+    \end{itemize}
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Платформа .NET Core}
+\begin{itemize}
+    \item Производительность
+    \item Библиотеки платформы .NET core
+    \item C\#, Visual Basic, F\#
+    \item CoreFX, CoreCLR
+    \item Облочные и интернет технологии
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Немного про API}
+\begin{itemize}
+    \item Операция, которую можно выполнить
+    \item Данные на вход
+    \item Данные на выход
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Немного про API}
+\begin{itemize}
+    \item Примитивные типы
+    \begin{itemize}
+        \item System.Boolean, System.Int32
+    \end{itemize}
+    \item Коллекции
+    \begin{itemize}
+        \item System.Collections.Generic.List<T>, 
+        \item System.Collections.Generic.Dictionary<TKey, TValue>
+    \end{itemize}
+    \item Служебные типы
+    \begin{itemize}
+        \item System.IO.FileStream
+    \end{itemize}
+    \item Высокопроизводительные типы
+    \begin{itemize}
+        \item System.Numerics.Vector, System.Span<T>
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Преимущества .NET Core}
+\begin{itemize}
+    \item Мультиплатформенное ПО
+    \item Для систем с высокоми требованиями производительности
+    \item Для консольных приложений 
+    \item При необходимости использования нескольких версий .NET
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}
+\frametitle{Платформа Mono}
+\begin{itemize}
+    \item Изначатьно как реализация .NET на Linux
+    \item Для разработки кроссплатформенных приложений
+    \item Поддерживает стандарты C\# и стандарт CLI
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Компоненты Mono}
+\begin{itemize}{}
+    \item Компилятор языка C\#
+    \item Среда исполнения Mono
+    \begin{itemize}{}
+        \item Common Language Runtime
+        \item Компилятор CLI (Just-In-Time)
+        \item Генератор машинного кода AOT (Ahead-Of-Time)
+        \item Загрузчик сборок
+        \item Сборщик мусора
+        \item Подсистемы управления многопоточностью
+        \item Компоненты поддержки взаимодействия между сборками и COM
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Компоненты Mono}
+\begin{itemize}
+    \item Базовая библиотека классов
+    \item Библиотека классов Mono
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Преимущества Mono}
+    \begin{itemize}
+        \item Мультиплатформенность
+        \item Удобстово в разработке
+        \item Некоторые библиотеки лучше работают под Mono
+    \end{itemize}
+\end{frame}
+\end{document}
+
+
