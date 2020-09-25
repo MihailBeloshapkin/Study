@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtext}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{mathptmx}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[english,bulgarian,ukranian,russian]{babel}
+\linespread{1.5}
+
+\usepackage[left=1.5cm, right=1.5cm, top=2cm, bottom=2cm, bindingoffset=0cm]{geometry}
+\setlength{\parskip}{0.1cm}
+\setlength{\parindent}{0.0cm}
+\begin{document}
+
+\large
+\begin{center}
+    \underline{Этот документ создан для тренировки верстки текстов, содержащих математические символы}
+\end{center}
+Катеты и гиппотенуза в прямоугольном треугольнике связаны следующим соотношением:
+\[ a^2 + b^2 = c^2\] где $a$ и $b$ - это катеты, а $c$ - гипотенуза\\
+Пусть $V$ - это линейное пространство\\
+$W \subset V$ называется линейным подпространством в $V$, если:\\
+
+1) $W \neq \varnothing$\\
+2) $\forall w, w' \in W: w + w' \in W$\\
+3) $\forall w \in W, \forall \alpha \in K: \alpha w \in W$\\
+\underline{Св-ва:} Пусть $W$ - линейное подпространство в V\\
+1) $0 \in W$\\
+2) $w \in W \Rightarrow -w \in W$\\
+\underline{Док-во:}\\
+2) $-w = -(1w) = (-1)w \in W$\\
+1) $w \in W \Rightarrow -w \in W; w - w = 0$\\
+
+\underline{Опр} Пусть $V$ -- линейное пространство над полем $K$, $X \subset V$\\
+Линейной оболочкой $X$ называется:\\
+\[Lin(X) = \left\{ \sum\limits_{i=1}^n \alpha_i\cdot V_i | n \geqslant 1, \alpha_i \in K \right\} \]\\
+\underline{Опр:} Набор векторов $V_1, \ldots v_m \in v$ называется порождающим семейством, если $Lin(v_1, \ldots v_m) = V$\\
+Пусть $v_1, \ldots v_{n+1} \in v$ -- система образующих $v$\\
+Тогда $v_1, \ldots v_m \text{- система образующих} V \Leftrightarrow v_{n + 1}\in Lin(v_1, \ldots v_m)$ \\
+\underline{Док-во:}  \\
+\begin{math}
+\Rightarrow  v_{n + 1} \in V = Lin(v_1, \ldots v_m) \\
+\Leftarrow \text{Пусть} v_{m + 1} \in Lin(v_1, \ldots v_m) \\ \text{Пусть} v \in V \\ Lin(v_1, \ldots v_{m + 1}) = V 
+\Rightarrow v = \alpha_1v_1 + \ldots + \alpha_{m + 1}v_{m + 1} \text{ для некоторого } \alpha_1\ldots\alpha_{m + 1} \in K\\
+\text{ Но } v_{m + 1} = \beta_1 v_1 + \ldots + \beta_m v_m \text{ для некоторого } \beta_1 \ldots \beta_m \in K 
+\Rightarrow v = \alpha_1 v_1 + \ldots + \alpha_m v_m  + \alpha_{m + 1}(\beta_1 v_1 + \ldots + \beta_m v_m)
+\end{math} \\
+Некоторые интегралы: \\
+$$\int f(x)dx = F(x) + C, \text{ где } F'(x) = f(x), \text{ а } C \in \mathbb{R}$$ 
+$$\int x^n dx = \frac{x^{n + 1}}{n + 1}$$ 
+$$\int e^x = e^x$$
+$$\int \sin(x)dx = -\cos(x)$$
+$$\int \frac{dx}{cos^2(x)} = \tg(x)$$
+$$\int \frac{dx}{\sqrt{a^2 + x^2}} = \frac{1}{a} \arctan(\frac{x}{a})$$
+
+
+
+\[\left(\begin{array}{cccccccc}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+8 & 7 & 6 & 5 & 4 & 3 & 2 & 1
+\end{array}\right)
+\]
+\begin{equation*}
+\delta_{ij} =
+\left\{
+\begin{array}{lr}
+1 & \text{ для } i = j\\
+0 & \text{ для } i \ne j
+\end{array}
+\right.
+\end{equation*}\\
+\large
+
+
+
+\end{document}
