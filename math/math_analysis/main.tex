@@ -1,0 +1,290 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtext}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{mathptmx}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[english, russian]{babel}
+\linespread{1.6}
+
+\usepackage[left=1.5cm, right=1.0cm, top=2cm, bottom=2cm, bindingoffset=0cm]{geometry}
+\setlength{\parskip}{0.1cm}
+\setlength{\parindent}{0.0cm}
+
+\begin{document}
+\large
+\begin{center}
+    \underline{ИДЗ №1}
+\end{center}
+\begin{flushright}
+Белошапкин Михаил, 244 группа
+\end{flushright}
+\underline{1.1}
+\[ g(x, y) = f(e^{x^2} - y + 2x, \varphi(\sqrt{y} \ln{x}), \psi(\cos(x - y), \frac{y}{x}))\]
+\( \text{Рассмотрим} \quad f(x_1, x_2, x_3) \text{, где  }
+ x_1 = e^{x^2} - y + 2x; \quad x_2 = \varphi(\sqrt{y} \ln{x}); \quad x_3 = \psi(\cos(x - y), \frac{y}{x}) \) \\
+1)\[ \frac{\partial f}{\partial x} = \frac{\partial f}{\partial x_1} \frac{\partial x_1}{\partial x} + 
+\frac{\partial f}{\partial x_2}\frac{\partial x_2}{\partial x} + 
+\frac{\partial f}{\partial x_3}\frac{\partial x_3}{\partial x} = \]
+\[ = f'_1 \cdot (2x e^{x^2} + 2) + f'_2 \cdot (\varphi'(\sqrt{y} \ln{x})\frac{\sqrt{y}}{x}) 
++ f'_3 \cdot \left[ \psi'_1 (- \sin(x - y)) + \psi'_2 (- \frac{y}{x^2}) \right] \]
+2)\[ \frac{\partial f}{\partial y} = f'_1 \cdot (-1) + f'_2 \cdot \varphi'(\sqrt{y} \ln{x})\frac{1}{2\sqrt{y}} + f'_3 \cdot \left[ \psi'_1 \cdot\sin(x - y) + \psi'_2\cdot \frac{1}{x} \right] \]
+3) \[ \frac{\partial^2 f}{\partial x \partial y} = (f'_1)'_y \cdot (2xe^{x^2} + 2) + 
+(f'_2)'_y\cdot\varphi'(\sqrt{y} \ln{x})\frac{1}{2\sqrt{y}} +
+f'_2\cdot \left[ (\varphi'_x)'_y(\sqrt{y} \ln x)\frac{\ln x}{2x} + \varphi'(\sqrt{y} \ln x)\frac{1}{2x\sqrt{y}} \right] +
+\]
+\[
++ f'_3 \cdot \left[ 
+(\psi'_1)'_y (- \sin(x - y)) - \psi'_1 \cos (x - y) + 
+(\psi'_2)'_y (- \frac{y}{x^2}) + 
+\psi'_2 (-\frac{1}{x^2})
+\right] + \]
+\[
++ (f'_3)'_y \cdot \left[ 
+\psi'_1 (- \sin(x - y)) + \psi'_2 (- \frac{y}{x^2})
+\right] 
+\] \\
+
+\underline{1.2}
+\[ x^2 + 2y^2 + 3u^2 + xy - u - 9 = 0, \quad A(1, -2) \]
+Подставим $x = 1$, $y = -2$:\\
+\( 1 + 8 + 3u^2 - 2 - u - 9 = 0 \Leftrightarrow 3u^2 - u - 2 = 0 \Leftrightarrow 
+u = \frac{1 \pm \sqrt{1 + 24}}{6} \Leftrightarrow 
+\begin{cases}
+u = 1 \\
+u = - \frac{2}{3}
+\end{cases}\) \\ \\
+Пусть $F(x, y, u) = x^2 + 2y^2 + 3u^2 + xy - u - 9$ \\
+\( dF = d(x^2 + 2y^2 + 3u^2 + xy -u -9) = 2xdx + 4ydy + 6udu + ydx + xdy - du = 0 \) \\
+\[ du = \frac{2xdx + 4ydy + ydx + xdy}{1 - 6u} \]
+Подставим разные значения $u$ и получим ответ. \\
+\underline{Отв:} 
+\( du = \frac{7dy }{5}, \quad du = \frac{-7dy}{5}\) \\
+Теперь найдем второй дифференциал: \\
+\( u'_x = -\frac{F'_x}{F'_u} = - \frac{2x + y}{6u - 1}
+\quad u'_y = -\frac{F'_y}{F'_u} = \frac{4y + x}{6u - 1} \\
+u''_{xx} = -\frac{2}{6u - 1} \quad u''_{yy} = -\frac{4}{6u - 1} 
+\quad u''_{xy} = -y \\
+\) \\
+1) \(   d^2 u = - \frac{2}{5} dx^2 + 2dxdy - \frac{4}{5} dy^2\) \\
+2) \(   d^2 u =  \frac{2}{5} dx^2 + 2dxdy + \frac{4}{5} dy^2\)
+\\ 
+\underline{Отв:}
+ \(   d^2 u = - \frac{2}{5} dx^2 + 2dxdy - \frac{4}{5} dy^2, \quad
+  d^2 u =  \frac{2}{5} dx^2 + 2dxdy + \frac{4}{5} dy^2\)
+\\ \\
+\underline{1.3}
+\[ f(x, y, z) = \frac{1}{5}z^5 - z^2y + \frac{2}{9}y^3 - 4z + 4x + \frac{1}{x}\]
+Найдем частные производные $f(x, y, z)$:
+\begin{equation*}
+    \begin{cases}
+    f'_x = 4 - \frac{1}{x^2} = 0 \\
+    f'_y = -z^2 + \frac{2}{3} y^2 = 0\\
+    f'_z = z^4 - 2zy - 4 = 0
+    \end{cases}
+    \Leftrightarrow
+    \begin{cases}
+    x = \pm \frac{1}{2} \\
+    y = \pm \sqrt{\frac{3}{2}} z\\
+    z^4 \pm \sqrt{6}z^2 - 4 = 0
+    \end{cases}
+    \Leftrightarrow
+    \begin{cases}
+    x = \pm \frac{1}{2} \\
+    y = \pm \sqrt{3\frac{\sqrt{6} + \sqrt{22}}{4}}\\
+    z = \pm\sqrt{\frac{\sqrt{6} + \sqrt{22}}{2}}
+    \end{cases}
+\end{equation*}
+Отсеем неподходящие решения и получим:
+\begin{equation*}
+    \begin{cases}
+    x = \pm \frac{1}{2} \\
+    y = - \sqrt{\frac{3}{2}} z \\
+    z = \pm \sqrt{\frac{-\sqrt{6} + \sqrt{22}}{2}}
+    \end{cases}
+\end{equation*}
+Выпишем точки в явном виде:
+\[ M\left( \frac{1}{2}, \sqrt{3\frac{\sqrt{6} + \sqrt{22}}{4}}, 
+\sqrt{\frac{\sqrt{6} + \sqrt{22}}{2}}\right) \]
+
+\[ M\left( \frac{1}{2}, -\sqrt{3\frac{\sqrt{6} + \sqrt{22}}{4}}, 
+-\sqrt{\frac{\sqrt{6} + \sqrt{22}}{2}}\right) \]
+
+\[ M\left( -\frac{1}{2}, \sqrt{3\frac{\sqrt{6} + \sqrt{22}}{4}}, 
+\sqrt{\frac{\sqrt{6} + \sqrt{22}}{2}}\right) \]
+
+\[ M\left( -\frac{1}{2}, -\sqrt{3\frac{\sqrt{6} + \sqrt{22}}{4}}, 
+-\sqrt{\frac{\sqrt{6} + \sqrt{22}}{2}}\right) \]
+
+Найдем частные производные второго порядка:
+\begin{equation*}
+    \begin{cases}
+    f''_{xx} = 2\frac{1}{x^{3}} \\
+    f''_{yy} = \frac{4}{3} y \\
+    f''_{zz} = 4z^3 - 2y \\
+    f''_{xy} = 0 \\
+    f''_{xz} = 0 \\
+    f''_{yz} = -2 z
+    \end{cases}
+\end{equation*}
+Теперь найдем главные миноры этой матрицы:
+\[
+\left(
+\begin{array}{ccc}
+    f''_{xx}(M_0) & f''_{xy}(M_0) & f''_{xz}(M_0) \\
+    f''_{yx}(M_0) & f''_{yy}(M_0) & f''_{yz}(M_0) \\
+    f''_{zx}(M_0) & f''_{zy}(M_0) & f''_{zz}(M_0)
+\end{array}
+\right)
+\]
+\[
+\Delta_1 = 
+\begin{vmatrix}
+2\frac{1}{x^3}
+\end{vmatrix}  
+\quad \Delta_2 = 
+\begin{vmatrix}
+     2\frac{1}{x^{3}} & 0  \\
+     0 & \frac{4}{3} y 
+\end{vmatrix}
+\quad \Delta_3 = 
+\begin{vmatrix}
+    2\frac{1}{x^{3}} & 0 & 0 \\
+    0 & \frac{4}{3} y & -2z \\
+    0 & -2z & 4z^3 - 2y
+\end{vmatrix}
+\]
+
+1) \( x = \frac{1}{2} \quad 
+y = \sqrt{3\frac{\sqrt{6} + \sqrt{22}}{4}} \quad 
+z = \sqrt{\frac{\sqrt{6} + \sqrt{22}}{2}}\\
+\Delta_1 = 16 > 0, \quad \Delta_2 = \frac{8y}{3x^3} > 0, \quad
+\Delta_3 = \frac{8}{3} \frac{y}{x^3}(4z^3 - 2y) - 8\frac{z^2}{x^3} = 
+\frac{8}{3} (\frac{4}{3}yz^3 - \frac{2}{3}y^2 - z^2) > 0 \) \\ \\
+2) \( x = \frac{1}{2} \quad 
+y = -\sqrt{3\frac{\sqrt{6} + \sqrt{22}}{4}} \quad 
+z = -\sqrt{\frac{\sqrt{6} + \sqrt{22}}{2}} \\
+\Delta_1 > 0, \quad \Delta_2 < 0 \Rightarrow \text{ Эта точка не подходит} \) \\ \\
+3) \( x = -\frac{1}{2} \quad 
+y = \sqrt{3\frac{\sqrt{6} + \sqrt{22}}{4}} \quad 
+z = \sqrt{\frac{\sqrt{6} + \sqrt{22}}{2}}\\ 
+\Delta_1 < 0, \quad \Delta_2 < 0 \Rightarrow \text{ Эта точка не подходит} \) \\ \\
+4) \( x = -\frac{1}{2} \quad 
+y = -\sqrt{3\frac{\sqrt{6} + \sqrt{22}}{4}} \quad 
+z = -\sqrt{\frac{\sqrt{6} + \sqrt{22}}{2}} \\
+\Delta_1 < 0, \quad \Delta_2 > 0, \quad \Delta_3 < 0 \) \\ \\ \\
+
+\underline{Отв:} \\  $M\left( \frac{1}{2}, \sqrt{3\frac{\sqrt{6} + \sqrt{22}}{4}}, 
+\sqrt{\frac{\sqrt{6} + \sqrt{22}}{2}}\right)$ - точка максимума \\ \\
+$M\left( -\frac{1}{2}, -\sqrt{3\frac{\sqrt{6} + \sqrt{22}}{4}}, 
+-\sqrt{\frac{\sqrt{6} + \sqrt{22}}{2}}\right)$ - точка минимума
+\\ \\
+\underline{1.4} 
+\[ U = x y^2 z^3 \quad x+ 2y^2 + 3z^3 = 0 \]
+Выразим $z^3$ через $x$ и $y$: $z^3 = \frac{1}{3} (1 - x - 2y^2)$ \\
+\[ U = \frac{1}{3} x y^2 (1 - x - 2y^2) = \frac{1}{3} (x y^2 - x^2 y^2 - 2y^4 x) \]
+\[ U'_x = \frac{1}{3} (y^2 - 2x y^2 - 2y^4) \]
+\[ U'_y = \frac{1}{3} (2y x - 2y x^2 - 8x y^3)\]
+
+\begin{equation*}
+\begin{cases}
+U'_x = \frac{1}{3} (y^2 - 2x y^2 - 2y^4) \\
+U'_y = \frac{1}{3} (2y x - 2y x^2 - 8x y^3)
+\end{cases}
+\Leftrightarrow \quad
+\begin{cases}
+1 - 2x - 2y^2 = 0 \\
+1 - x - 4y^2 = 0
+\end{cases}
+\Leftrightarrow \quad
+\begin{cases}
+x = \frac{1}{3} \\
+y = \pm \sqrt{\frac{1}{6}}
+\end{cases}
+\end{equation*}\\
+Находим $z$ из уравнения связи:
+\[ z^3 = \frac{1}{3} (1 - x - 2y^2) \Leftrightarrow z = \sqrt[3]{\frac{1}{9}}\]
+Получили подозрительные точки: \[M_0 = \left(\frac{1}{3}, \pm \sqrt{\frac{1}{6}}, \sqrt[3]{\frac{1}{9}}\right) \]
+Найдем частные производные второго порядка: \\
+\begin{equation*}
+\begin{cases}
+U''_{xx} = -\frac{2}{3} y \\
+U''_{yy}  = \frac{1}{3} (2x - 2x^2 -24 x y^2) \\
+U''_{xy} = \frac{1}{3} (2y - 4xy - 8y^3)
+\end{cases}
+\Rightarrow
+\quad
+\begin{cases}
+U''_{xx} (M_0) = - \frac{1}{9} \\
+U''_{yy} (M_0) = - \frac{8}{27} \\
+U''_{xy} (M_0) = \mp \frac{2}{9\sqrt{6}}
+\end{cases}
+\end{equation*}
+Посчитаем определитель соответствующей матрицы 2 на 2:  
+\[ \det A = U''_{xx} (M_0) \cdot U''_{yy} (M_0) - U''^2_{xy} (M_0) = \frac{1}{9} \cdot \frac{8}{27} - \frac{4}{486} = \]
+\[ = \frac{8}{243} - \frac{8}{972} < 0\]
+При этом $U''_{xx} < 0 \Rightarrow$ это \underline{точки максимума}.
+\\ \\
+
+\underline{1.5} \\
+\[ x^2\frac{\partial^2 z}{\partial x^2} -2xy\frac{\partial^2 z}{\partial x\partial y} -3y^2\frac{\partial^2 z}{\partial y^2} = 0 \]
+\[ u = \frac{y}{x}, \quad v = yx^3 \]
+\underline{Решение:} \\
+Продифференцируем $u$ и $v$ 2 раза:\\
+\begin{equation*}
+    \begin{cases}
+    du = \frac{dy}{x} = \frac{y}{x^2}dx \\
+    dv = 3x^2 ydx + x^3dy
+    \end{cases} \Rightarrow \quad
+    \begin{cases}
+    du^2 = \frac{dy^2}{x^2} - 2\frac{y}{x^3} dxdy + \frac{y^2}{x^4} dx^2 \\
+    dv^2 = 9x^4 y^2dx^2 + 6x^5 ydxdy + x^6 dy^2
+    \end{cases}
+\end{equation*} \\
+А значит \\
+\begin{equation*}
+    \begin{cases}
+    du^2 = \frac{dy^2}{x^2} - 2\frac{y}{x^3} dxdy + \frac{y^2}{x^4} dx^2 \\
+    dv^2 = 9x^4 y^2 dx^2 + 6x^5 y dxdy + x^6 dy^2 \\
+    dudv = x^2 dy^2 - 2xydxdy - 3y^2 x^2
+    \end{cases}
+\end{equation*}
+Понятно, что $z = z_1(x, y) = z_2(u, v)$ и $z''_1 = z''_2 = 0$. Воспользуемся этим: 
+\[ 
+z''_{xx} dx^2 + z''_{xy}dxdy + z''_{yy}dy^2 = z''_{uu}du^2 + z''_{uv}dudv + z''_{vv}dv^2 
+\Leftrightarrow \]
+\[ \Leftrightarrow 
+z''_{xx} dx^2 + z''_{xy}dxdy + z''_{yy}dy^2 = 
+z''_{uu}(\frac{dy^2}{x^2} - 2\frac{y}{x^3} dxdy + \frac{y^2}{x^4} dx^2) +
+z''_{uv}(x^2 dy^2 - 2xydxdy - 3y^2 x^2) +
+\]
+\[ + z''_{vv}(9x^4 y^2 dx^2 + 6x^5 y dxdy + x^6 dy^2) \]
+Преобразуем: 
+\[ (z''_{xx} - \frac{y^2}{x^4}z''_{uu} + 3y^2 z''_{uv} - 9x^4 y^2z''_{vv})dx^2 +
+(z''_{xy} + 2\frac{y}{x^3} z''_{uu} + 2xy z''_{uv} - 6x^5 x''_{vv})dxdy +
+(z''_{yy} - \frac{1}{x^2}z''_{uu} - x^2 z''_{uv} - x^6 z''_{vv})dy^2 = 0
+\]
+Из этого получаем систему: \\
+\begin{equation*}
+    \begin{cases}
+    (\frac{y^2}{x^4}z''_{uu} - 3y^2 z''_{uv} + 9x^4 y^2z''_{vv})\cdot x^2 = x^2 z''_{xx} \\
+    (-2\frac{y}{x^3} z''_{uu} - 2xy z''_{uv} + 6x^5 x''_{vv})\cdot(-2xy) = -2xy z''_{xy} \\
+    (\frac{1}{x^2}z''_{uu} + x^2 z''_{uv} + x^6 z''_{vv})\cdot(-3y^2) = -3y^2z''_{yy} 
+    \end{cases}
+\end{equation*}
+Принимая $u = \frac{y}{x}, \quad v = yx^3$:
+\begin{equation*}
+    \begin{cases}
+    u^2z''_{uu} - 3uvz''_{uv} + 9v^2 z''_{vv} = x^2 z''_{xx} \\
+    4u^2 z''_{uu} + 4uv z''_{uv} - 12 v^2 z''_{vv} = -2xy z''_{xy} \\
+    -3u^2 z''_{uu} - 3uv z''_{uv} - 3 v^2 z''_{vv} = -3y^2 z''_{yy}
+    \end{cases}
+\end{equation*}
+Итого:
+\[ 2u^2 z''_{uu} - 2uv z''_{uv} - 6v^2 z''_{vv} = 0 \]
+\end{document}

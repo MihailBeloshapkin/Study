@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtext}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{mathptmx}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[english,bulgarian,ukranian,russian]{babel}
+\linespread{1.5}
+
+\usepackage[left=1.5cm, right=1.5cm, top=2cm, bottom=2cm, bindingoffset=0cm]{geometry}
+\setlength{\parskip}{0.1cm}
+\setlength{\parindent}{0.0cm}
+
+\begin{document}
+\large
+\begin{center}
+    \underline{Дз по алгебре}
+\end{center}
+\underline{1.3} 
+\[ A = \left(\begin{array}{ccc}
+    1 & 1 & 1 \\
+    -3 & 3 & 3 \\
+    2 & -4 & 1 \\
+    -1 & 5 & 2
+\end{array} \right); \quad
+b = \left(\begin{array}{c}
+     11  \\
+     8 \\
+     -3 \\
+     3
+\end{array}\right)\]
+\[ A' = \bordermatrix{
+& & &\cr
+a_1 & 1 & -3 & 2 & -1\cr
+a_2 & 1 & 3 & -4 & 5\cr
+a_3 & 1 & 3 & 1 & 2 \cr
+} \] \\
+Составим ортогональный набор $e_1, e_2, e_3$:
+
+\[e_1 = a_1 = (1, -3, 2, -1) \]
+\[e_2 = a_2 - \frac{\langle a_2, e_1\rangle}{\langle e_1, e_1 \rangle}e_1  \Leftrightarrow
+e_2 = (1, -3, 2, -1) - \frac{1 - 9 - 8 - 5}{1 + 9 + 4 + 1}(1, -3, 2, -1) = 
+(\frac{12}{5}, -\frac{6}{5}, -\frac{6}{5}, \frac{18}{5}) \sim \underline{(4, -2, -2, 6)}
+\]
+\[
+e_3 = a_3 - \frac{\langle a_3, e_1 \rangle}{\langle e_1, e_1 \rangle}e_1 - 
+\frac{\langle a_3, e_2 \rangle}{\langle e_2, e_2\rangle}e_2 = (1, 3, 1, 2) - \frac{1-9+3-2}{1+9+9+1}(1, -3, 2, -1) -
+\frac{2 - 3 -1 + 6}{1 + 9 + 4 + 1}(2, -1, -1, 3) = 
+\]
+\[
+ = (1, \frac{25}{15}, \frac{35}{15}, \frac{10}{15}) \sim (15, 25, 35, 10) \sim \underline{(3, 5, 7, 2)}
+\]
+Итого получили ортогональный набор векторов:
+\[\bordermatrix{
+& & &\cr
+e_1 & 1 & -3 & 2 & -1\cr
+e_2 & 4 & -2 & -2 & 6\cr
+e_3 & 3 & 5 & 7 & 2 \cr
+} \]
+Найдем псевдорешение системы $Ax = b$. Пусть $x = (\alpha, \beta\ \gamma)^T\Rightarrow Ax = \alpha a_1 + \beta a_2 +
+\gamma a_3$, где $a_1, a_2, a_3$ -- столбцы в матрице $A \Rightarrow Ax \in \langle a_1; a_2; a_3\rangle$. 
+Представим b как сумму $b' \in  \langle a_1; a_2; a_3\rangle$ и $h \perp a_1, a_2, a_3$: \[ b = b' + h \]
+$b'$ - проекция $b$ на $\langle a_1; a_2; a_3\rangle$, $h$ - высота. \\
+Пусть $x^*$ - искомое псевдорешение.
+\newpage
+Тогда $b = Ax^* + h  \Rightarrow Ax^* = b - h = b'$ \\
+Теперь найдем проекцию $b^T$ на ортогональный базис $(e_1; e_2; e_3 ) \in \langle a_1^T; a_2^T; a_3^T \rangle $ \\
+$h \perp a_1, a_2, a_3 \Rightarrow h^T \perp a_1^T, a_2^T, a_3^T \Rightarrow h^T \perp e_1, e_2, e_3$ Т.е. \\
+\[ b^T = b'^T + h^T  = \alpha e_1 + \beta e_2 + \gamma e_3 + h^T \Leftrightarrow h^T = b^T - 
+(\alpha e_1 + \beta e_2 + \gamma e_3)\] 
+Найдем $\alpha, \beta, \gamma$: \\
+
+1) $h^T \perp e_1 \Rightarrow \langle h^T, e_1 \rangle = 0 \Rightarrow \langle b^T, e_1 \rangle = 
+\alpha \langle e_1, e_1 \rangle \Rightarrow $
+\[\alpha = \frac{\langle b^T, e_1 \rangle}{\langle e_1, e_1 \rangle}\]
+$$\alpha = \frac{11 - 24 - 6 - 3}{1 + 9 + 4 + 1} = -\frac{22}{15} = -\frac{22}{15}$$ \\
+2) $h^T \perp e_2 \Rightarrow \langle h^T, e_2 \rangle = 0 \Rightarrow \langle b^T, e_2 \rangle = 
+\beta \langle e_2, e_2 \rangle \Rightarrow $
+\[ \beta = \frac{\langle b^T, e_2 \rangle}{\langle e_2, e_2 \rangle}\]
+$$\beta = \frac{44 - 16 + 6 + 18}{16 + 4 + 4 + 36} = \frac{26}{30} = \frac{13}{15}$$ \\
+3) $h^T \perp e_3 \Rightarrow \langle h^T, e_3 \rangle = 0 \Rightarrow \langle b^T, e_3 \rangle = 
+\gamma \langle e_3, e_3 \rangle \Rightarrow $
+\[ \gamma = \frac{\langle b^T, e_3 \rangle}{\langle e_3, e_3 \rangle}\]
+$$\gamma = \frac{33 + 40 - 21 + 6}{9 + 25 + 49 + 4} = \frac{58}{87} = \frac{2}{3}$$ \\
+Теперь найдем $h^T$: \\
+\[ h^T = b^T - (\alpha e_1 + \beta e_2 + \gamma e_3) \]
+\newpage
+\[ \alpha e_1 = \left( -\frac{22}{15}; \frac{66}{15}; -\frac{44}{15}; \frac{22}{15}\right) \]
+\[ \beta e_2 = \left( \frac{52}{15}; -\frac{26}{15}; -\frac{26}{15}; \frac{78}{15}\right) \]
+\[ \gamma e_3 = \left( 2; \frac{10}{3}; \frac{14}{3}; \frac{4}{3} \right) \]
+\[ h^T = (7, 2, -3, -5) \Rightarrow b'^T = b^T - h^T = (4, 6, 0, 8) \]
+Составим систему $Ax^* = b'$:
+\[ \left(\begin{array}{ccc}
+    1 & 1 & 1 \\
+    -3 & 3 & 3 \\
+    2 & -4 & 1 \\
+    -1 & 5 & 2
+\end{array} \right)
+\left( \begin{array}{c}
+  4 \\
+  6\\
+  0 \\
+  8
+\end{array}\right) \sim
+\left(\begin{array}{ccc}
+    1 & 1 & 1 \\
+    0 & 2 & 7 \\
+    0 & 0 & -10 \\
+    0 & 0 & 0
+\end{array} \right)
+\left( \begin{array}{c}
+  4 \\
+  12\\
+  -14 \\
+  0
+\end{array}\right)
+\]
+Получим ответ: $x^* = (4, 12, -14)$
+\end{document}
