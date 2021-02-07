@@ -1,0 +1,218 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtext}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{mathptmx}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[english, russian]{babel}
+\linespread{1.4}
+
+\usepackage[left=1.5cm, right=1.5cm, top=2cm, bottom=2cm, bindingoffset=0cm]{geometry}
+\setlength{\parskip}{0.1cm}
+\setlength{\parindent}{0.0cm}
+
+\begin{document}
+\large
+\begin{flushleft}
+\underline{9 ноября 2020 г.}
+\end{flushleft}
+С уравнениями познакомились -- теперь пришло время неравенств. Задачи данного типа не отличаются
+какой-то особой сложностью, поэтому при достаточно уверенной теоретической базе научиться решать
+их не составит особого труда. Но нужно помнить об одной очень важной для ЕГЭ вещи --  а именно об аккуратности
+и педантичности, так как подавляющее большинство ошибок совершаются именно по невнимательности
+будущего абитуриента. 
+\section*{Неравенства}
+Прежде чем приступить к решениям и разборам, нужно уточнить один очень важный факт:
+\[ \log_a x \text{ строго убывает  при } a \in (0;1)\]
+\[ \log_a x \text{ строго возрастает при } a \in (1;\infty)\]
+Ну а вот первая задача: \\
+1. Решить неравенство:
+\[ \log_{x + 2} (x^2 - 3x) \geq \log_{x + 2}(-x)\]
+Переменная находится в обоих частях логарифма. Благо случай достаточно легкий -- основание-то
+одинаковое. Воспользуемся этим и перенесем все в одну часть:
+\[ \log_{x + 2} (x^2 - 3x) - \log_{x + 2}(-x) \geq 0 \Leftrightarrow \]
+\begin{equation*}
+\Leftrightarrow
+    \begin{cases}
+    \log_{x + 2} \frac{x^2 - 3x}{-x} \geq 0 (*)\\
+    x < 0 \\
+    x^2 - 3x > 0
+    \end{cases}
+    \Leftrightarrow
+    \begin{cases}
+    \log_{x + 2} (-x + 3) \geq 0 (*)\\
+    x < 0 \\
+    x^2 - 3x > 0 \\
+    x \neq 0
+    \end{cases}
+    (0)
+\end{equation*}
+Решим неравенство (*). Представим в виде системы:
+\begin{equation*}
+    \left[
+    \begin{gathered}
+      \begin{cases}
+          -x + 3 \geq 1 \\
+          x + 2 > 1
+      \end{cases} \\
+      \begin{cases}
+          -x + 3 \leq 1 \\
+          x + 2 < 1
+      \end{cases}
+    \end{gathered}
+    \right.
+    \Leftrightarrow
+    \left[
+    \begin{gathered}
+      \begin{cases}
+          2 \geq x \\
+          x > -1
+      \end{cases} \\
+      \begin{cases}
+          2 \leq x \\
+          x < -1
+      \end{cases}
+    \end{gathered}
+    \right.
+    \Leftrightarrow
+    x \in (-1;2] 
+\end{equation*}
+\newpage
+Сопоставим с первоначальной системой (0):
+\begin{equation*}
+\Leftrightarrow
+    \begin{cases}
+    x \in (-1;2] \\
+    x + 2 \in (0; 1) \cup (1;+\infty) \\
+    x < 0 \\
+    x^2 - 3x > 0 \\
+    x \neq 0
+    \end{cases}
+    \Leftrightarrow
+    \begin{cases}
+    x \in (-1;2] \\
+    x \in (-2; -1) \cup (-1;+\infty) \\
+    x < 0 \\
+    x \in (-\infty;0) \cup (3;+\infty) \\
+    x \neq 0
+    \end{cases}
+    \Leftrightarrow
+    x \in (-1;0)
+\end{equation*}
+2. Решить неравенство:
+\[ \log_{x - 2} 5 \leq 2\]
+3. Решить неравенство 
+\[ x^{2 - 4\log_2 x + \log^2_2 x} < \frac{1}{x} \]
+Разбор задачи в конце документа! \\
+4. Решить неравенство:
+\[ \frac{\log^2_{\frac{1}{2}} - 4}{\log_{\frac{1}{2}} - 1} \leq 0\]
+5. Решить неравенство:
+\[ 4 \cdot 3^x \log_{\frac{1}{2}} x + 36 \log_2 x + 9 \geq 3^x \]
+6. Решить неравенство
+\[ \frac{\log_2 (3\cdot2^{x - 1} - 1)}{x} \geq 0 \]
+7. Решить неравенство:
+\[ \log_x 2 \cdot \log_{2x} 2 \cdot \log_{2} (16x) \geq 1 \]
+\(\mathbf{Fact:}\) Отметим одну существенную вещь, а именно попробуем решить в общем
+случае неравенство вида:
+\[ \log_{g(x)} f(x) > 0 \]
+Мы знаем, что \( \log_{g(x)} f(x) \text{ строго убывает  при } g(x) \in (0;1),  
+\text{ строго возрастает при g(x) > 1 }\). Также любой логарифм принимает
+нулевой значение только при $f(x) = 1$. Не забывая об ОДЗ, запишем это
+в виде системы:
+\begin{equation*}
+    \left[
+    \begin{gathered}
+    \begin{cases}
+    f(x) > 1 \\
+    g(x) > 1
+    \end{cases}
+    \\
+    \begin{cases}
+    f(x) > 1 \\
+    g(x) < 1
+    \end{cases}
+    \end{gathered}
+    \right.
+    \Leftrightarrow
+    (f(x) - 1) \cdot (g(x) - 1) > 0
+\end{equation*}
+То есть для решения изначального неравенства достаточно решить систему:
+\begin{equation*}
+    \begin{cases}
+    (f(x) - 1) \cdot (g(x) - 1) > 0 \\
+    f(x) > 0 \\
+    g(x) > 0 \\
+    g(x) \neq 1
+    \end{cases}
+\end{equation*}
+\section*{Тригонометрия}
+Буквально пару слов про обратные тригонометрическиее функции.
+\[ \arcsin x + \arccos x = \frac{\pi}{2} \]
+\[ \arctan x + \arcctg x = \frac{\pi}{2} \]
+Док-во:
+\[ \arcsin x = \arcsin (\cos (\arccos x)) = \arcsin (\sin (\frac{\pi}{2} - \arccos x))
+= \frac{\pi}{2} - \arccos x\]
+\[ \arctan x = \arctan (\ctg (\arcctg x)) = \arctan (\tan(\frac{\pi}{2} - \arcctg x))
+ = \frac{\pi}{2} - \arcctg x \]
+1. Решить неравенство:
+\[ \frac{3\ctg x}{1 + \ctg x} \leq 2\]
+2. Решить неравенство:
+\[ \arccos x < \arcsin x \]
+3. Решить уравнение:
+\[ \sqrt{\sin^2 x  - \cos^2 x} \left( \frac{1}{\ctg 2x} + 1\right) = 0\]
+4. Решить уравнение
+\[ 2\cdot \cos 2x + 4 \cos(1.5\pi - x) + 1 = 0 \]
+И найти корни, принадлежащие отрезку $[1.5\pi; 3\pi]$
+\\
+5. Решить уравнение:
+\[ \arcsin(\cos(2\arcctg x)) = 0 \]
+\newpage
+2. (Решение) 
+\[ x^{2 - 4\log_2 x + \log^2_2 x} < \frac{1}{x} \Leftrightarrow \]
+\[ \Leftrightarrow x^{2 - 4\log_2 x + \log^2_2 x} < x^{-1} \]
+Как мы знаем, показательная функция $a^x$ возрастает при $a > 1$,
+убывает при $0 < a < 1$, и константна при $a = 1$. Так как неравенство строгое,
+последний вариант отпадает. Рассмотрим первые два из них: \\
+\begin{equation*}
+\left[
+\begin{gathered}
+\begin{cases}
+x > 1 \\
+2 -4\log_2 x + \log^2_2 x < -1
+\end{cases}
+\\
+\begin{cases}
+x \in (0; 1) \\
+2 -4\log_2 x + \log^2_2 x > -1
+\end{cases}
+\end{gathered}
+\right.
+\Leftrightarrow
+\left[
+\begin{gathered}
+\begin{cases}
+x > 1 \\
+(\log_2 x - 3) \cdot (\log_2 x - 1) < 0
+\end{cases}
+\\
+\begin{cases}
+x \in (0; 1) \\
+(\log_2 x - 3) \cdot (\log_2 x - 1) > 0
+\end{cases}
+\end{gathered}
+\right.
+\end{equation*}
+\\
+Что делать дальше, я думаю понятно.
+\\
+4. (Решение) \\
+\[ 4 \cdot 3^x \log_{\frac{1}{2}} x + 36 \cdot \log_2 x + 9 \geq 3^x \Leftrightarrow 
+ -4 \cdot 3^x \log_2 x + 36 \log_2 x + 9 - 3^x \geq 0 \Leftrightarrow\]
+\[ 4 \log_2 x (9 - 3^x) + (9 - 3^x) \geq 0 \Leftrightarrow 
+(4\log_2 x + 1) \cdot (9 - 3^x) \geq 0\]
+\end{document}
