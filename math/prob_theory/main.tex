@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtext}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{mathptmx}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[english, russian]{babel}
+\linespread{1.2}
+\usepackage[left=3.5cm, right=2cm, top=2cm, bottom=2cm, bindingoffset=0cm]{geometry}
+\setlength{\parskip}{0.1cm}
+\setlength{\parindent}{0.0cm}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{xcolor}
+\definecolor{linkcolor}{HTML}{760B12}
+\definecolor{urlcolor}{HTML}{760B12}
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
+\begin{document}
+\Large
+Покажите, что $\varphi(t) = e^{\lambda(e^{-|t|} - 1)}$ есть 
+характеристическая функция обощенного распределения Пуассона,
+порожденного распределением Коши.
+\\
+\underline{Решение}
+\\
+Пусть $Y = x_1 + x_2 + ... + x_n$, $x_i$ задается распределением Коши, плотность которого: \[f_{x_i} (x) = \frac{1}{\pi (1 + x^2)} \]
+\\
+Выразим характеристическую функцию для $Y$:
+\[
+  \varphi_{Y} (t) = E[e^{itY}] = 
+  Ee^{it\sum_{j = 1}^{\Pi_\lambda} x_j } = 
+  \sum_{n = 1}^{\infty} \frac{\lambda^n e^{-\lambda}}{n!} 
+  Ee^{it\sum_{j = 1}^{n} x_j} =
+  \sum_{n = 1}^{\infty} \frac{\lambda^n e^{-\lambda}}{n!} \varphi_{\sum_{j = 1}^{n}x_j} (t) = 
+\]
+\[
+  = \sum_{n = 1}^{\infty} \frac{\lambda^n e^{-\lambda}}{n!} \left( \varphi_{x} (t)\right)^n 
+  = e^{\lambda (\varphi_{x} (t) - 1)} \quad(1)
+\]
+Воспользуемся х.ф. распределения Коши:
+\[
+    \phi(t) = e^{-|t|}
+\]
+Подставим в (1):
+\[
+    \varphi_{Y} (t) = e^{\lambda(e^{-|t|} - 1)}
+\]
+читд
+\\
+\\
+Найдем функцию распределения для сложного Пуассоновского распределения, и из нее выразим плотность.
+\[Y = x_1 + ... + x_n \]
+\[F(a) = P(Y < a) = \sum_{n = 1}^{\infty } P(\Pi_{\lambda} = n, x_n < a) = \sum_{n = 1}^{\infty } P(\Pi_\lambda = n) P(x_n < a) =
+\]
+\[ \sum_{n = 1}^{\infty} \frac{\lambda^n e^{-\lambda}}{n!}  \frac{1}{\pi}\int_{-\infty}^{a} \frac{n}{n^2 + x^2}dx \]
+Продифференцируем:
+\[
+  F'_{a} = \sum_{n = 1}^{\infty}  \frac{\lambda^n e^{-\lambda}}{n!} \cdot \frac{1}{\pi} \cdot \frac{n}{n^2 + a^2}
+\]
+\end{document}
